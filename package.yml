@@ -1,5 +1,5 @@
 name: greeter
-main: ./
+main: ./index
 version: 0.0.0
 devDependencies:
   tape: ~1.0.0
