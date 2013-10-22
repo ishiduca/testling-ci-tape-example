@@ -1,0 +1,58 @@
+<!doctype html>
+<head>
+<meta charset="utf-8" />
+<style>
+* {
+    font-family: monospace;
+    white-space: pre;
+}
+.not_ok {
+    color: #ff0000;
+}
+.ok {
+    color: #000000;
+}
+.foo {
+    color: #888888;
+}
+
+.success {
+    color: #00ff00;
+}
+.fail {
+    color: #ff0000;
+}
+.success, .fail {
+    font-weight: bold;
+}
+
+</style>
+<title>Greeter</title>
+</head>
+<body>
+<div id="tests"></div>
+<div id="result"></div>
+</body>
+<script src="./_bundle/bundle.js"></script>
+<script>
+if (! window.console) window.console = {}
+var _log = window.console.log
+window.console.log = function (msg) {
+    typeof _log === 'function' && _log.apply(window.console, [msg])
+    puts(msg)
+}
+
+function puts (msg) {
+    var p = document.createElement('div')
+    p.appendChild(document.createTextNode(msg))
+    p.className = /^not ok/.test(msg) ? 'not_ok'
+                : /^ok/    .test(msg) ? 'ok'
+                : /^# ok/  .test(msg) ? 'success'
+                : /^# fail/.test(msg) ? 'fail'   : 'foo'
+
+    document.querySelector('#tests').appendChild(p)
+
+    if (/^#\s(ok|fail)/.test(msg))
+		document.querySelector('#result').innerHTML = msg
+}
+</script>

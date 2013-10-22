@@ -1,0 +1,14 @@
+name: greeter
+main: ./
+version: 0.0.0
+devDependencies:
+  tape: ~1.0.0
+author: ishiduca@gmail.com
+license: MIT
+testling:
+  files: t/*.js
+  browsers:
+    - ie/6..latest
+    - chrome/20..latest
+    - safari/latest
+    - opera/11.0..latest
