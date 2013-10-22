@@ -12,7 +12,10 @@
          "chrome/20..latest",
          "ff/3.5..latest",
          "safari/latest",
-         "opera/11.0..latest"
+         "opera/11.0..latest",
+         "android-browser/4.2",
+         "iphone/6.0..latest",
+         "ipad/6.0..latest"
       ]
    },
    "license" : "MIT",
