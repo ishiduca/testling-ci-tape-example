@@ -34,7 +34,7 @@ test('new', function (t) {
     t.end()
 })
 test('.greet()', function (t) {
-    t.test('check stub can work.', function (tt) {
+    t.test('* stub works as expected', function (tt) {
         stub.setup()
         stub.buf.hour = 'bar'
         stub.buf.min  = 'foo'
@@ -45,7 +45,7 @@ test('.greet()', function (t) {
         tt.end()
     })
 
-    t.test('', function (tt) {
+    t.test('greeter.greet() returns the expected greet', function (tt) {
         function subt (hour, min, mes) {
             stub.clear()
             stub.buf.hour = hour - 9
